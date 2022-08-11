@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  num_of_rooms: 1
+  num_of_beds: 1
+  description: MyText
+  start_date: 2022-08-11
+  end_date: 2022-08-11
+  price: 9.99
+  num_of_guests: 1
+
+two:
+  title: MyString
+  num_of_rooms: 1
+  num_of_beds: 1
+  description: MyText
+  start_date: 2022-08-11
+  end_date: 2022-08-11
+  price: 9.99
+  num_of_guests: 1
