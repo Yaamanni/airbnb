@@ -10,3 +10,28 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-airbnb {
+  --bs-bg-opacity: 1;
+  background-color: $white !important;
+  position:absolute;
+  z-index:1;
+  width: 100%;
+}
+
+.navbar-toggler {
+  border: 0px !important;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.navbar-brand {
+  color: $grab !important;
+}
+
+.nav-item > a {
+  color: var(--bs-nav-link-color);
+  text-decoration: none;
+}
