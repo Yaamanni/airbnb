@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_action :set_listing, only: %i[show edit update destroy]
 
   # GET /listings
   def index
@@ -51,6 +51,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:user_id, :address_id, :title, :num_of_rooms, :num_of_beds, :description, :start_date, :end_date, :price, :num_of_guests)
+    params.require(:listing).permit(:title, :num_of_rooms, :num_of_beds, :description, :start_date, :end_date, :price, :num_of_guests)
   end
 end
