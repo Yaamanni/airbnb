@@ -1,2 +1,10 @@
-<h1>Listings#show</h1>
-<p>Find me in app/views/listings/show.html.erb</p>
+<p style="color: green"><%= notice %></p>
+
+<%= render @listing %>
+
+<div>
+  <%= link_to "Edit this listing", edit_listing_path(@listing) %> |
+  <%= link_to "Back to listings", listings_path %>
+
+  <%= button_to "Destroy this listing", @listing, method: :delete %>
+</div>
