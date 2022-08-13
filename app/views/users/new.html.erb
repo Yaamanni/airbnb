@@ -1,2 +1,9 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Join as a User!😊</h1>
+<p>Create your user account</p>
+<%= simple_form_for(user) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%= f.input :user_type, collection: ['Host', 'Guest'], as: :radio_buttons %>
+  <%= f.submit %>
+<% end %>
