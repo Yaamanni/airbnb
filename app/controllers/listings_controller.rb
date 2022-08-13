@@ -14,10 +14,15 @@ class ListingsController < ApplicationController
   # POST /articles
   def create
     @listing = Listing.new(listing_params)
-    if @listing.save
-      redirect_to @listing, notice: "Listing was successfully created."
-    else
-      render :new, status: :unprocessable_entity
+
+    respond_to do |format|
+      if @listing.save
+        format.html { redirect_to listing_url(@listing), notice: "Listing was successfully created." }
+        format.json { render :show, status: :created, location: @listing }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @listing.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -31,17 +36,25 @@ class ListingsController < ApplicationController
 
   # PATCH /articles/1
   def update
-    if @listing.update(listing_params)
-      redirect_to @listing, notice: "Listing was successfully created."
-    else
-      render :edit, status: :unprocessable_entity
+    respond_to do |format|
+      if @listing.update(listing_params)
+        format.html { redirect_to listing_url(@listing), notice: "Listing was successfully updated." }
+        format.json { render :show, status: :ok, location: @listing }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @listing.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   # DELETE /articles/1
   def destroy
     @listing.destroy
-    redirect_to listings_path, notice: "Listing was deleted."
+
+    respond_to do |format|
+      format.html { redirect_to listings_url, notice: "Listing was successfully destroyed." }
+      format.json { head :no_content }
+    end
   end
 
   private
@@ -51,6 +64,7 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:title, :num_of_rooms, :num_of_beds, :description, :start_date, :end_date, :price, :num_of_guests)
+    params.fetch(:listing, {})
+    # params.require(:listing).permit(:title, :num_of_rooms, :num_of_beds, :description, :start_date, :end_date, :price, :num_of_guests)
   end
 end
