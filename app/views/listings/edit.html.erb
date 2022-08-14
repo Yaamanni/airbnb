@@ -1,2 +1,10 @@
-<h1>Listings#edit</h1>
-<p>Find me in app/views/listings/edit.html.erb</p>
+<h1>Editing listing</h1>
+
+<%= render "form", listing: @listing %>
+
+<br>
+
+<div>
+  <%= link_to "Show this listing", @listing %> |
+  <%= link_to "Back to listings", listings_path %>
+</div>
