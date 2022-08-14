@@ -2,9 +2,40 @@
 
 <%= render @listing %>
 
-<div>
+<div class="container-listing">
+  <div class="row listing-content">
+    <div class="listing">
+      <div class="listing-title">
+        <h1><strong><%= @listing.title %></strong></h1>
+      </div><br>
+
+      <div class="listing-details">
+        <div class="row-content">
+          <div class="col-xs-3">
+            <h3><strong>Details</strong></h3>
+          </div>
+
+          <div class="col-xs-9">
+            <h5>Description: <%= @listing.description %></h5>
+            <h5>No. of rooms: <%= @listing.num_of_rooms %></h5>
+            <h5>No. of beds: <%= @listing.num_of_beds %></h5>
+            <h5>No. of guests: <%= @listing.num_of_guests %></h5>
+            <h5>Availability: <%= @listing.start_date %> to <%= @listing.end_date %></h5>
+            <h5><%= @listing.price %> SGD/night</h5>
+          </div>
+        </div>
+        <br><br>
+      </div>
+
+      <%# <div class="listing-reviews">
+        <%= render 'reviews' %>
+      </div> %>
+    </div>
+
+    <%# <%= render 'bookings/form', listing: @listing, booking: @booking %> %>
+
+    <br><br><br>
   <%= link_to "Edit this listing", edit_listing_path(@listing) %> |
   <%= link_to "Back to listings", listings_path %>
-
   <%= button_to "Destroy this listing", @listing, method: :delete %>
 </div>
