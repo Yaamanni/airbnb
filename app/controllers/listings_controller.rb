@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :set_listing, only: %i[show edit update destroy]
 
   # GET /listings

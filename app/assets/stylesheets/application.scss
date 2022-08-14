@@ -10,4 +10,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "components/footer"
+@import "components/footer";
+@import "bookings/index";
+
+.all {
+  padding-top: 5rem;
+}
