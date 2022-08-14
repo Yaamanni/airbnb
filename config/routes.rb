@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :listings
   resources :bookings
+  resources :reviews, only: [:create, :index]
 
   devise_for :users
 end
