@@ -35,3 +35,14 @@
   color: var(--bs-nav-link-color);
   text-decoration: none;
 }
+
+.nav-item {
+  border-top: 1px solid $grab-secondary;
+
+  :hover {
+    background-color: $grab;
+    border-radius: 10px;
+    padding: 5px;
+    color: $white;
+  }
+}
