@@ -1,31 +1,6 @@
-<div class="d-flex flex-column justify-content-center align-items-center">
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <%= image_tag("house1.jpeg", class: "d-block w-100") %>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag("house2.jpeg", class: "d-block w-100") %>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag("house3.jpeg", class: "d-block w-100") %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="page">
-  <div class="page__header">
-  <h1 data-controller="typed-js"></h1>
-  <h2>Find your perfect next escape here</h2>
-  </div>
-  <div class="page__bar"></div>
-  <%= render "shared/search" %>
-  <div class="page__listing">
-    <% 15.times do %>
-      <%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
-      <%= image_tag("house2.jpeg", class: "d-block w-100 page__listing") %>
-      <%= image_tag("house3.jpeg", class: "d-block w-100 page__listing") %>
-    <% end %>
-  </div>
+<div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+    <h1>Airbnb</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <%= link_to "New listing", new_listing_path, class: "btn btn-primary" %>
+    <%= link_to "New booking", new_booking_path, class: "btn btn-success" %>
 </div>
