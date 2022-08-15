@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_14_093252) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_15_123412) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,4 +50,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_14_093252) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wishlists", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "listing_id", null: false
+    t.boolean "like"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_wishlists_on_listing_id"
+    t.index ["user_id"], name: "index_wishlists_on_user_id"
+  end
+
+  add_foreign_key "wishlists", "listings"
+  add_foreign_key "wishlists", "users"
 end
