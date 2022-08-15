@@ -16,11 +16,10 @@
 
     <%= render "shared/flashes" %>
     <% if user_signed_in? %>
-    <h2> Hi <%= current_user.first_name %></h2>
+      <h2> Hi <%= current_user.email %></h2>
     <% end %>
-    <div class="container all">
-      <%= yield %>
-    </div>
+    <%= yield %>
+
     <%= render "shared/footer" %>
   </body>
 </html>
