@@ -1,31 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @listing %>
+<%# <%= render @listing %> %>
 
-<div class="container-listing">
-  <div class="row listing-content">
-    <div class="listing">
-      <div class="listing-title">
-        <h1><strong><%= @listing.title %></strong></h1>
-      </div><br>
 
-      <div class="listing-details">
-        <div class="row-content">
-          <div class="col-xs-3">
-            <h3><strong>Details</strong></h3>
-          </div>
-
-          <div class="col-xs-9">
-            <h5>Description: <%= @listing.description %></h5>
-            <h5>No. of rooms: <%= @listing.num_of_rooms %></h5>
-            <h5>No. of beds: <%= @listing.num_of_beds %></h5>
-            <h5>No. of guests: <%= @listing.num_of_guests %></h5>
-            <h5>Availability: <%= @listing.start_date %> to <%= @listing.end_date %></h5>
-            <h5><%= @listing.price %> SGD/night</h5>
-          </div>
-        </div>
-        <br><br>
-      </div>
+<div class="card-trip">
+  <%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
+  <div class="card-trip-infos">
+    <div>
+      <h1><strong><%= @listing.title %></strong></h1>
+      <h5>Description: <%= @listing.description %></h5>
+      <h5>No. of rooms: <%= @listing.num_of_rooms %></h5>
+      <h5>No. of beds: <%= @listing.num_of_beds %></h5>
+      <h5>No. of guests: <%= @listing.num_of_guests %></h5>
+      <h5>Availability: <%= @listing.start_date %> to <%= @listing.end_date %></h5>
+    </div>
+    <h2 class="card-trip-pricing"><%= @listing.price %> SGD/night</h2>
+  </div>
+</div>
 
       <%# <div class="listing-reviews">
         <%= render 'reviews' %>

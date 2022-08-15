@@ -3,12 +3,13 @@
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
+    <div class="search-form-control form-group">
       <%= f.input :title, as: :text %>
       <%= f.input :description, as: :text %>
       # need to change to some date type or calendar view
       <%= f.input :start_date, as: :text %>
-      # need to change to some date type or calendar view<%= f.input :end_date, as: :text %>
+      # need to change to some date type or calendar view
+      <%= f.input :end_date, as: :text %>
       <%= f.input :num_of_rooms, collection: 1..10, label: "No. of Rooms" %>
       <%= f.input :num_of_beds, collection: 1..10, label: "No. of Beds" %>
       <%= f.input :num_of_guests, collection: 1..10, label: "No. of Guests" %>
