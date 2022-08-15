@@ -1,0 +1,10 @@
+<h1>My Wishlist</h1>
+
+<div id="wishlist">
+  <% @wishlist.each do |wishlist| %>
+    <%= render wishlist %>
+    <p>
+      <%= link_to "Show this wishlist", wishlist %>
+    </p>
+  <% end %>
+</div>
