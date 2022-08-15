@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'wishlist/new'
 
   root "page#index"
 
