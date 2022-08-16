@@ -13,10 +13,21 @@
 }
 
 .btn-medium {
-	color: #999999;
+	background-color: #1e1c1c;
+  color: #ffffff;
 	border: 1px solid #999999;
 	padding: 15px 25px;
-	border-radius: 50px;
+	border-radius: 40px;
 	font-weight: lighter;
-	opacity: 0.6;
+	opacity: 1.0;
+}
+
+.btn-grey {
+	background-color: #989696;
+  color: #ffffff;
+	border: 1px solid #999999;
+	padding: 15px 25px;
+	border-radius: 40px;
+	font-weight: lighter;
+	opacity: 1.0;
 }
