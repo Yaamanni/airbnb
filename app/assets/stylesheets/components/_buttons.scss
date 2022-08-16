@@ -4,9 +4,9 @@
 }
 
 @keyframes blinkingBackground{
-  0%		{ background-color: $grab;}
-  25%		{ background-color: $grab-secondary;}
-  50%		{ background-color: $grab;}
-  75%		{ background-color: $grab-secondary;}
-  100%	{ background-color: $grab;}
+  0%		{ background-color: $grab; }
+  25%		{ background-color: $grab-secondary; }
+  50%		{ background-color: $grab; }
+  75%		{ background-color: $grab-secondary; }
+  100%	{ background-color: $grab; }
 }
