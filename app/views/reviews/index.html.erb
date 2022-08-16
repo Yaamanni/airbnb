@@ -1,4 +1,6 @@
-<h1>List all reviews</h1>
+<p style="color: green"><%= notice %></p>
+
+<h1>Reviews</h1>
 
 <div id="reviews">
   <% @reviews.each do |review| %>
@@ -8,3 +10,5 @@
     </p>
   <% end %>
 </div>
+
+<%= link_to "New review", new_review_path %>

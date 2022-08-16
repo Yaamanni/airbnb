@@ -13,13 +13,13 @@
 
   <body>
     <%= render "shared/navbar" %>
-
     <%= render "shared/flashes" %>
     <% if user_signed_in? %>
       <h2> Hi <%= current_user.email %></h2>
     <% end %>
-    <%= yield %>
-
+    <div class="container all">
+      <%= yield %>
+    </div>
     <%= render "shared/footer" %>
   </body>
 </html>

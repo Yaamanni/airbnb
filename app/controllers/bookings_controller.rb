@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :set_booking, only: %i[ show edit update destroy ]
 
   # GET /bookings or /bookings.json
@@ -12,7 +13,9 @@ class BookingsController < ApplicationController
 
   # GET /bookings/new
   def new
+    @listing = Listing.find params[:listing_id]
     @booking = Booking.new
+    @booking.listing = @listing
   end
 
   # GET /bookings/1/edit
@@ -21,11 +24,14 @@ class BookingsController < ApplicationController
 
   # POST /bookings or /bookings.json
   def create
+    @listing = Listing.find params[:listing_id]
     @booking = Booking.new(booking_params)
+    # @booking.user = User.first
+    @booking.listing = @listing
 
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to booking_url(@booking), notice: "Booking was successfully created." }
+        format.html { redirect_to listing_booking_path(@listing, @booking), notice: "Booking was successfully created." }
         format.json { render :show, status: :created, location: @booking }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -66,6 +72,7 @@ class BookingsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def booking_params
-    params.fetch(:booking, {})
+    params.require(:booking)
+          .permit(:start_date, :end_date, :num_of_guests)
   end
 end

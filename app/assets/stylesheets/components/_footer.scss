@@ -10,6 +10,7 @@
   padding: 0px 0px;
   color: rgba(0,0,0,0.3);
 }
+
 .footer-element {
   display: flex;
   flex-direction: column;
@@ -19,18 +20,26 @@
   justify-content:space-around;
   vertical-align: middle;
   color: black;
-}
-.footer-element a {
-  color: black;
-  opacity: 0.15;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
-}
-.footer-element a:hover {
-  opacity: 1;
-}
-.footer-element a:focus {
-  color: green;
-  opacity: 1;
+  width: 65px;
+
+  .footer-description {
+    font-size: var(--bs-body-font-size);
+  }
+
+  a {
+    color: black;
+    opacity: 0.45;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 0px 10px;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    &:focus {
+      color: $grab;
+      opacity: 1;
+    }
+  }
 }

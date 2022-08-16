@@ -1,31 +1,32 @@
-<p style="color: green"><%= notice %></p>
+<div class="container-display">
+  <p style="color: green"><%= notice %></p>
 
-<%# <%= render @listing %> %>
+  <%= render @listing %>
 
-
-<div class="card-trip">
-  <%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
-  <div class="card-trip-infos">
-    <div>
-      <h1><strong><%= @listing.title %></strong></h1>
-      <h5>Description: <%= @listing.description %></h5>
-      <h5>No. of rooms: <%= @listing.num_of_rooms %></h5>
-      <h5>No. of beds: <%= @listing.num_of_beds %></h5>
-      <h5>No. of guests: <%= @listing.num_of_guests %></h5>
-      <h5>Availability: <%= @listing.start_date %> to <%= @listing.end_date %></h5>
-    </div>
-    <h2 class="card-trip-pricing"><%= @listing.price %> SGD/night</h2>
-  </div>
+<div class="btn btn-grab">
+  <%= link_to "Grab now", new_listing_booking_path(@listing) %>
 </div>
 
+  <div class="card-trip">
+    <%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
+    <div class="card-trip-infos">
+      <div>
+        <h1><strong><%= @listing.title %></strong></h1>
+        <h5>Description: <%= @listing.description %></h5>
+        <h5>No. of rooms: <%= @listing.num_of_rooms %></h5>
+        <h5>No. of beds: <%= @listing.num_of_beds %></h5>
+        <h5>No. of guests: <%= @listing.num_of_guests %></h5>
+        <h5>Availability: <%= @listing.start_date %> to <%= @listing.end_date %></h5>
+      </div>
+      <h2 class="card-trip-pricing"><%= @listing.price %> SGD/night</h2>
       <%# <div class="listing-reviews">
-        <%= render 'reviews' %>
-      </div> %>
+        <%= render 'reviews/review', review: @review %>
+      <%# </div> %> %>
+      <%# <%= render 'bookings/form', listing: @listing, booking: @booking %> %>
+      <br>
     </div>
-
-    <%# <%= render 'bookings/form', listing: @listing, booking: @booking %> %>
-
-    <br><br><br>
+  </div>
+  <br>
   <%= link_to "Edit this listing", edit_listing_path(@listing) %> |
   <%= link_to "Back to listings", listings_path %>
   <%= button_to "Destroy this listing", @listing, method: :delete %>

@@ -1,14 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<div class="container-display">
+  <p style="color: green"><%= notice %></p>
 
-<div class="container-all-listings">
-  <h1>Your Listings (<%= @listings.count %>)</h1>
-  <div class="cards">
-    <div class="cards-grid">
-      <% @listings.each do |listing| %>
-        <%= render listing %>
-        <h3><%= link_to "#{listing.title}", listing %></h3>
-      <% end %>
+  <div class="container-all-listings">
+    <h1>Your Listings (<%= @listings.count %>)</h1>
+    <div class="cards">
+      <div class="cards-grid">
+        <% @listings.each do |listing| %>
+          <%= render listing %>
+          <h3><%= link_to "#{listing.title}", listing %></h3>
+        <% end %>
+      </div>
     </div>
+    <%= link_to "New listing", new_listing_path %>
   </div>
-  <%= link_to "New listing", new_listing_path %>
 </div>
