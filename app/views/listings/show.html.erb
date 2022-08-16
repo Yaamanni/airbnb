@@ -3,6 +3,10 @@
 
   <%= render @listing %>
 
+<div class="btn btn-grab">
+  <%= link_to "Grab now", new_listing_booking_path(@listing) %>
+</div>
+
   <div class="card-trip">
     <%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
     <div class="card-trip-infos">
@@ -15,7 +19,6 @@
         <h5>Availability: <%= @listing.start_date %> to <%= @listing.end_date %></h5>
       </div>
       <h2 class="card-trip-pricing"><%= @listing.price %> SGD/night</h2>
-
       <%# <div class="listing-reviews">
         <%= render 'reviews/review', review: @review %>
       <%# </div> %> %>

@@ -1,10 +1,13 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @booking %>
+<h1>Your Trip Booking id: <%= @booking.id %></h1>
+<%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
+<h1><%= @booking.listing.title %></h1>
+<div class="page__bar"></div><br>
+<h1>Number of guests: <%= @booking.num_of_guests %></h1>
+<h1>Check in: <%= @booking.start_date %></h1>
+<h1>Check out: <%= @booking.end_date %></h1>
 
 <div>
-  <%= link_to "Edit this booking", edit_booking_path(@booking) %> |
-  <%= link_to "Back to bookings", bookings_path %>
-
-  <%= button_to "Destroy this booking", @booking, method: :delete %>
+  <%= link_to "Show all my bookings", listing_booking_path(@booking.listing, @booking) %>
+  <%= button_to "Cancel reservation", @booking, method: :delete, class: "btn btn-danger" %>
 </div>

@@ -1,25 +1,11 @@
 .booking {
-  body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #F7F7F7;
-  }
+  padding-top: 20px;
+  height: 100vh;
 
   .flex-wrap-center {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .form-container {
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    background-color: white;
-    padding: 30px;
-    width: 350px;
-    margin: 0 auto;
   }
 
   .header {
@@ -59,7 +45,7 @@
     margin-top: 10px;
   }
 
-  #counter {
+  #counter, #guestCounter {
     margin: 0 15px;
   }
 
@@ -84,4 +70,22 @@
   .btn-primary:focus {
     background-color: $grab-secondary;
   }
+}
+
+.booking__bar {
+  background-color: green;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.fa-star {
+  animation: blinkingStar 2s infinite;
+}
+
+@keyframes blinkingStar{
+  0%		{ color: $grab; }
+  25%		{ color: $grab-secondary; }
+  50%		{ color: $grab; }
+  75%		{ color: $grab-secondary; }
+  100%	{ color: $grab; }
 }
