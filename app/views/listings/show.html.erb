@@ -16,10 +16,10 @@
       </div>
       <h2 class="card-trip-pricing"><%= @listing.price %> SGD/night</h2>
 
-      <%# <div class="listing-reviews">
-        <%= render 'reviews' %>
-      <%# </div>
-      <%= render 'bookings/form', listing: @listing, booking: @booking %> %> %>
+      <div class="listing-reviews">
+        <%= render 'reviews', reviews: @reviews %>
+      </div>
+      <%= render 'bookings/form', listing: @listing, booking: @booking %>
       <br>
     </div>
   </div>
