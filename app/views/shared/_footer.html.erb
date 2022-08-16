@@ -1,20 +1,28 @@
 <nav class="bottom-nav">
   <div class="footer">
-    <div class="footer-element">
-      <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-      <div class="footer-description">Explore</div>
+    <div class="footer-element ">
+      <%= link_to listings_path do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="footer-description">Explore</div>
+      <% end %>
     </div>
     <div class="footer-element">
-      <a href="#"><i class="fa-solid fa-book-atlas"></i></a>
-      <div class="footer-description">Bookings</div>
+      <%= link_to "#" do %>
+        <i class="fa-solid fa-book-atlas"></i>
+        <div class="footer-description">Bookings</div>
+      <% end %>
     </div>
     <div class="footer-element">
-      <a href="#"><i class="fa-solid fa-heart"></i></a>
-      <div class="footer-description">Wishlist</div>
+      <%= link_to "#" do %>
+        <i class="fa-solid fa-heart"></i>
+        <div class="footer-description">Wishlist</div>
+      <% end %>
     </div>
     <div class="footer-element">
-      <a href="#"><i class="fa-solid fa-user"></i></a>
-      <div class="footer-description">Login</div>
+      <%= link_to "#" do %>
+        <i class="fa-solid fa-user"></i>
+        <div class="footer-description">Login</div>
+      <% end %>
     </div>
   </div>
 </nav>
