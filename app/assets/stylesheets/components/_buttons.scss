@@ -3,10 +3,20 @@
   color: $white;
 }
 
+
 @keyframes blinkingBackground{
   0%		{ background-color: $grab; }
   25%		{ background-color: $grab-secondary; }
   50%		{ background-color: $grab; }
   75%		{ background-color: $grab-secondary; }
   100%	{ background-color: $grab; }
+}
+
+.btn-medium {
+	color: #999999;
+	border: 1px solid #999999;
+	padding: 15px 25px;
+	border-radius: 50px;
+	font-weight: lighter;
+	opacity: 0.6;
 }
