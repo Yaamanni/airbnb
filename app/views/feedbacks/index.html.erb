@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Feedback</h1>
+<%= link_to "New feedback", new_feedback_path %>
+<div id="feedbacks">
+  <table>
+    <tr>
+      <th>Name </th>
+      <th style="width: 100%;">Comments </th>
+    </tr>
+  <% @feedbacks.each do |feedback| %>
+    <tr>
+      <td><%= feedback.name%></td>
+      <td ><%=feedback.content %></td>
+    </tr>
+  <% end %>
+ </table>
+</div>

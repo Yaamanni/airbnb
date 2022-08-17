@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root "page#index"
 
   resources :listings do
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :destroy]
 
   resources :reviews
+
+  resources :feedbacks, except: [:edit, :destroy]
 
   devise_for :users
 end
