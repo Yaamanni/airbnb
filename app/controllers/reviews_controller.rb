@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  # skip_before_action :authenticate_user!
   before_action :set_review, only: %i[ show edit update destroy ]
 
   # GET /reviews or /reviews.json
@@ -12,7 +13,9 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
+    @listing = Listing.find(params[:listing_id])
     @review = Review.new
+    @review.listing = @listing
   end
 
   # GET /reviews/1/edit
@@ -21,7 +24,11 @@ class ReviewsController < ApplicationController
 
   # POST /reviews or /reviews.json
   def create
+    puts params[:listing_id]
+    @listing = Listing.find(params[:listing_id])
     @review = Review.new(review_params)
+    @review.listing = @listing
+    @review.booking = @listing.bookings.first
 
     respond_to do |format|
       if @review.save
