@@ -7,7 +7,7 @@
 <h1>Check in: <%= @booking.start_date %></h1>
 <h1>Check out: <%= @booking.end_date %></h1>
 
-<div>
-  <%= link_to "Show all my bookings", listing_booking_path(@booking.listing, @booking) %>
+<div class="booking__show">
+  <%= link_to "Show all my bookings", bookings_path %>
   <%= button_to "Cancel reservation", @booking, method: :delete, class: "btn btn-danger" %>
 </div>
