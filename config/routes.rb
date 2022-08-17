@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'wishlist/new'
-
-
   root "page#index"
+  
+  get 'wishlist/new'
 
   resources :listings do
     resources :bookings, except: [:index, :destroy]
   end
 
-
+  
   root "page#index"
 
   resources :listings
