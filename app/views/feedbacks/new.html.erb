@@ -1,0 +1,15 @@
+<h1>New feedback</h1>
+<p>We appreciate any feedback you have on what you like or dislike about Grabnb</p>
+<ul>
+  <li>Product</li>
+  <li>User Experience</li>
+  <li>Design</li>
+  <li>Technical</li>
+</ul>
+<%= render "form", feedback: @feedback %>
+
+<br>
+
+<div>
+  <%= link_to "Back to all feedback", feedbacks_path %>
+</div>

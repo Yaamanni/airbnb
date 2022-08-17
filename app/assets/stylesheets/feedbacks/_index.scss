@@ -1,0 +1,21 @@
+#feedbacks {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+
+  td, th {
+    border: 1px solid  $white;;
+    padding: 8px;
+  }
+
+  tr:nth-child(even){ background-color: $white; }
+  tr:hover { background-color: $white; }
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: $grab;
+    color: white;
+  }
+}
