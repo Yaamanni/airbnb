@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :reviews, except: [:index, :destroy]
   end
 
+  resources :bookings, only: [:index, :destroy]
   resources :reviews, only: [:create, :index]
   resources :wishlist, only: [:create, :index]
 
