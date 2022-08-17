@@ -2,7 +2,7 @@
   position: fixed;
   left: 0;
   bottom: 0;
-  background: white;
+  background: $white;
   display: flex;
   align-items:flex-start;
   justify-content: space-around;
@@ -10,6 +10,7 @@
   padding: 0px 0px;
   color: rgba(0,0,0,0.3);
   z-index: 99;
+  color: $gray;
 }
 
 .footer-element {
@@ -20,7 +21,7 @@
   text-decoration: none;
   justify-content:space-around;
   vertical-align: middle;
-  color: black;
+  color: $grab-secondary;
   width: 65px;
 
   .footer-description {
@@ -28,7 +29,7 @@
   }
 
   a {
-    color: black;
+    color: $grab-secondary;
     opacity: 0.45;
     text-decoration: none;
     font-size: 24px;
