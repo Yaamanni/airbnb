@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
 
   # GET /bookings/1 or /bookings/1.json
   def show
+    @listing = Listing.find params[:listing_id]
   end
 
   # GET /bookings/new

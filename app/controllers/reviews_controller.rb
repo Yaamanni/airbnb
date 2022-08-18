@@ -9,6 +9,8 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1 or /reviews/1.json
   def show
+    @listing = Listing.find(params[:listing_id])
+    @review = Review.find(params[:id])
   end
 
   # GET /reviews/new
@@ -20,6 +22,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1/edit
   def edit
+    @review = Review.find(params[:id])
   end
 
   # POST /reviews or /reviews.json
@@ -32,7 +35,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to booking_review_path(@review, @review.booking), notice: "Review was successfully created." }
+        format.html { redirect_to listing_review_path(@review, @review.booking), notice: "Review was successfully created." }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new, status: :unprocessable_entity }
