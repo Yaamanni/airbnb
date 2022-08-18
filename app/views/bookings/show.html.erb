@@ -9,5 +9,6 @@
 
 <div class="booking__show">
   <%= link_to "Show all my bookings", bookings_path %>
+  <%= link_to "Add review", new_listing_review_path(@listing) %>
   <%= button_to "Cancel reservation", @booking, method: :delete, class: "btn btn-danger" %>
 </div>
