@@ -20,12 +20,11 @@
   <h2>Find your perfect next escape here</h2>
   </div>
   <div class="page__bar"></div>
-  <%= render "shared/search" %>
+  <%= render "shared/search" %> <br> <br>
+  <h3>Top 3 listings</h3>
   <div class="page__listing">
-    <% 15.times do %>
-      <%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
-      <%= image_tag("house2.jpeg", class: "d-block w-100 page__listing") %>
-      <%= image_tag("house3.jpeg", class: "d-block w-100 page__listing") %>
-    <% end %>
+    <%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
+    <%= image_tag("house2.jpeg", class: "d-block w-100 page__listing") %>
+    <%= image_tag("house3.jpeg", class: "d-block w-100 page__listing") %>
   </div>
 </div>

@@ -4,10 +4,10 @@
   <div class="container-all-listings">
     <h1>Host Listings (<%= @listings.count %>)</h1>
     <div class="cards">
-    <% @listings.each do |listing| %>
+    <% @listings.each_with_index do |listing, number| %>
       <div class="card-trip">
         <%= render listing %>
-        <%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
+        <%= image_tag("house#{number}.jpeg", class: "d-block w-100 page__listing") %>
         <h2><%= link_to "#{listing.title}", listing %></h2>
       </div>
     <% end %>
