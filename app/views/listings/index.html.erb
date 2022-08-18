@@ -2,7 +2,7 @@
   <p style="color: green"><%= notice %></p>
 
   <div class="container-all-listings">
-    <h1><%= @listings.first.user.username %> Listings (<%= @listings.count %>)</h1>
+    <h1>Host Listings (<%= @listings.count %>)</h1>
     <div class="cards">
     <% @listings.each do |listing| %>
       <div class="card-trip">
