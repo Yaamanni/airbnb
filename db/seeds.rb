@@ -28,7 +28,7 @@ puts "Creating listings"
   puts "Finished listings!"
 
   puts "Creating bookings"
-  (2..5).to_a.sample.times do
+  (1..3).to_a.sample.times do
     booking = Booking.new(
       start_date:Faker::Date.between(from: Date.today, to: 1.days.from_now),
       end_date: Faker::Date.forward(days: 60),
@@ -39,7 +39,7 @@ puts "Creating listings"
     puts "Finished bookings!"
 
     puts "Creating reviews"
-    (2..5).to_a.sample.times do
+    (1..3).to_a.sample.times do
       review = Review.new(
         content: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 2),
         rating: (0..5).to_a.sample,
