@@ -3,7 +3,7 @@
 <%= render @review %>
 
 <div>
-  <%= link_to "Edit this review", edit_review_path(@review) %> |
+  <%= link_to "Edit this review", edit_listing_review_path(@review) %> |
   <%= link_to "Back to reviews", reviews_path %>
 
   <%= button_to "Destroy this review", @review, method: :delete %>
