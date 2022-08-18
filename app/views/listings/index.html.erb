@@ -4,13 +4,13 @@
   <div class="container-all-listings">
     <h1>Host Listings (<%= @listings.count %>)</h1>
     <div class="cards">
+    <% @listings.each do |listing| %>
       <div class="card-trip">
-        <% @listings.each do |listing| %>
-          <%= render listing %>
-          <%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
-          <h2><%= link_to "#{listing.title}", listing %></h2>
-        <% end %>
+        <%= render listing %>
+        <%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
+        <h2><%= link_to "#{listing.title}", listing %></h2>
       </div>
+    <% end %>
     </div>
     <br>
     <%= link_to "New listing", new_listing_path %>
