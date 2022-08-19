@@ -1,9 +1,9 @@
-<h1>Editing booking</h1>
-
-<%= render "form", booking: @booking %>
-
-<br>
-
+<div class="container-display">
+  <h1>Editing booking</h1>
+  <div class="card-trip card-trip-infos">
+    <%= render "form", booking: @booking %>
+  </div>
+</div>
 <div>
   <%= link_to "Show this booking", @booking %> |
   <%# <%= link_to "Back to bookings", listing_booking_path(@listing) %> %>

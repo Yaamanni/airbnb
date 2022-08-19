@@ -35,7 +35,7 @@
 .nav-item > a {
   text-decoration: none;
   color: $grab-secondary;
-  opacity: 0.45;
+  opacity: 0.7;
   font-size: 17px;
 
   &:hover {
@@ -52,8 +52,8 @@
 hr {
   padding: none;
   margin: 0px 10px;
-  opacity: 0.7;
-  color: $grab;
+  opacity: 0.3;
+  color: $grab-secondary;
 }
 
 // .navbar-lewagon {

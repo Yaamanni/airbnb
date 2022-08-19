@@ -1,8 +1,11 @@
-<%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
-<h1><%= @booking.listing.title %></h1>
-<h6><i class="fas fa-star"></i> 4.8</h6>
-<div class="booking__bar"></div>
-<%= simple_form_for([@listing, @booking]) do |f| %>
+<div class="container-display">
+  <div class="card-trip">
+    <%= image_tag(@booking.listing.image_url) %>
+  </div>
+  <h1><%= @booking.listing.title %></h1>
+  <h6><i class="fas fa-star"></i> 4.8</h6>
+  <div class="booking__bar"></div>
+  <%= simple_form_for([@listing, @booking]) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -46,10 +49,12 @@
 
           <form>
             <input type="number" value=<%= @booking.listing.price %> disabled class="form-control" id="price-input" name="price-cents">
+            <br>
             <input type="submit" value="Pay $<%= @booking.listing.price %>" class="btn btn-primary" id="submit">
           </form>
         </div>
       </div>
     </div>
   </div>
-<% end %>
+  <% end %>
+</div>
