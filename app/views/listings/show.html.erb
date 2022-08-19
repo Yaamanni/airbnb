@@ -4,7 +4,7 @@
   <%= render @listing %>
 
   <div class="card-trip">
-    <%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
+    <%= image_tag(@listing.image_url) %>
     <div class="card-trip-infos">
       <div>
         <h1><strong><%= @listing.title %></strong></h1>

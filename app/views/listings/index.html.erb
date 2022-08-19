@@ -8,7 +8,7 @@
         <% @listings.each do |listing| %>
           <%= link_to listing do %>
             <div class="card-trip">
-              <%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
+              <%= image_tag(listing.image_url) %>
               <h2><%= listing.title %></h2>
             </div>
           <% end %>

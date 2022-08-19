@@ -2,7 +2,7 @@
   --bs-bg-opacity: 1;
   background-color: $white !important;
   position:absolute;
-  z-index:99;
+  z-index:100;
   width: 100%;
   overflow: hidden;
 }
@@ -49,6 +49,12 @@
   }
 }
 
+hr {
+  padding: none;
+  margin: 0px 10px;
+  opacity: 0.7;
+  color: $grab;
+}
 
 // .navbar-lewagon {
 //   justify-content: space-between;

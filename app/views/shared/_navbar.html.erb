@@ -9,9 +9,11 @@
         <li class="nav-item">
           <%= link_to "About us", "https://github.com/Yaamanni/airbnb" %>
         </li>
+        <hr>
         <li class="nav-item">
           <%= link_to "Grab all listings", listings_path %>
         </li>
+        <hr>
         <li class="nav-item">
           <% if user_signed_in?  %>
             <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
@@ -19,6 +21,7 @@
             <%= link_to "Log In/ Sign Up", new_user_registration_path  %>
           <% end %>
         </li>
+        <hr>
         <li class="nav-item">
           <%= link_to "Feedback", feedbacks_path %>
         </li>

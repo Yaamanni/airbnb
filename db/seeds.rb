@@ -18,11 +18,12 @@ puts "Creating listings"
     num_of_rooms: (1..5).to_a.sample,
     num_of_beds: (1..10).to_a.sample,
     num_of_guests: (1..10).to_a.sample,
-    description: Faker::Lorem.paragraph(sentence_count: 3, supplemental: true, random_sentences_to_add: 3),
+    description: Faker::Hipster.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 3),
     start_date: Faker::Date.between(from: Date.today, to: 1.days.from_now),
     end_date: Faker::Date.forward(days: 60),
-    price: (80..500).to_a.sample
-    # photos: Faker::LoremFlickr.image(size: "320x240", search_terms: ['holiday', 'apartments'], match_all: true)
+    price: (80..500).to_a.sample,
+    image_url: "http://picsum.photos/id/#{rand(0..500)}/#{rand(300..400)}/#{rand(150..200)}"
+    # image_url: Faker::LoremFlickr.image(size: "320x240", search_terms: ['house', 'apartment', 'flat', 'room'])
   )
   listing.save!
   puts "Finished listings!"
@@ -41,7 +42,7 @@ puts "Creating listings"
     puts "Creating reviews"
     (0..3).to_a.sample.times do
       review = Review.new(
-        content: Faker::Lorem.paragraph(sentence_count: 5, supplemental: true, random_sentences_to_add: 2),
+        content: Faker::Hipster.paragraph(sentence_count: 5, supplemental: true, random_sentences_to_add: 3),
         rating: (1..5).to_a.sample,
         listing: listing,
         booking: booking
