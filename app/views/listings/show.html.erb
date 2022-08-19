@@ -17,14 +17,12 @@
         <h5>No. of beds: <%= @listing.num_of_beds %></h5>
         <h5>No. of guests: <%= @listing.num_of_guests %></h5>
         <h5>Availability: <%= @listing.start_date %> to <%= @listing.end_date %></h5>
+        <div class="listing-reviews">
+          <%= link_to "Book now", new_listing_booking_path(@listing) %> |
+          <%= link_to "Reviews how?", reviews_path %>
+        </div>
       </div>
       <h2 class="card-trip-pricing"><%= @listing.price %> SGD/night</h2>
-      <div
-      class="listing-reviews">
-      <%= link_to "Add review", new_listing_review_path(@listing) %>
-      <%= link_to "Book now", new_listing_booking_path(@listing) %>
-      </div>
-      <br>
     </div>
   </div>
   <br>
