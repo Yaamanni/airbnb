@@ -5,8 +5,10 @@
 <div id="reviews">
   <% @reviews.each do |review| %>
     <%= render review %>
+    <br>
+    <hr>
   <% end %>
 </div>
 
 # check the path to redirect to specific listing
-<%= link_to "Back to listing", listings_path %>
+<%= link_to "Back to listing", "#" %>

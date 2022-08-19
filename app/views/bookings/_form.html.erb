@@ -1,5 +1,5 @@
 <%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
-<h1><%= @listing.title %></h1>
+<h1><%= @booking.listing.title %></h1>
 <h6><i class="fas fa-star"></i> 4.8</h6>
 <div class="booking__bar"></div>
 <%= simple_form_for([@listing, @booking]) do |f| %>
@@ -16,7 +16,7 @@
         <div class="form-container">
           <div class="header">
             <div class="header-row">
-              <div class="big-bold" id="price" data-amount-cents="<%= @listing.price %>">$<%= @listing.price %></div>
+              <div class="big-bold" id="price" data-amount-cents="<%= @booking.listing.price %>">$<%= @booking.listing.price %></div>
               <div class="small-light"> / night</div>
             </div>
           </div>
@@ -45,11 +45,10 @@
           </div>
 
           <form>
-            <input type="number" value=<%= @listing.price %> disabled class="form-control" id="price-input" name="price-cents">
-            <input type="submit" value="Pay $<%= @listing.price %>" class="btn btn-primary" id="submit">
+            <input type="number" value=<%= @booking.listing.price %> disabled class="form-control" id="price-input" name="price-cents">
+            <input type="submit" value="Pay $<%= @booking.listing.price %>" class="btn btn-primary" id="submit">
           </form>
         </div>
-
       </div>
     </div>
   </div>

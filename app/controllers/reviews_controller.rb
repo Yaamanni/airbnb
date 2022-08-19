@@ -22,12 +22,10 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1/edit
   def edit
-    @review = Review.find(params[:id])
   end
 
   # POST /reviews or /reviews.json
   def create
-    puts params[:listing_id]
     @listing = Listing.find(params[:listing_id])
     @review = Review.new(review_params)
     @review.listing = @listing

@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<h1>Review</h1>
 
-<%= render @review %>
+<div class="container-display">
+  <p style="color: green"><%= notice %></p>
+  <%= render @review %>
+  <div>
+    <%= link_to "Edit review", edit_listing_review_path(@review) %> |
+    <%= link_to "Back to reviews", reviews_path %>
 
-<div>
-  <%= link_to "Edit this review", edit_listing_review_path(@review) %> |
-  <%= link_to "Back to reviews", reviews_path %>
-
-  <%= button_to "Destroy this review", @review.listing, method: :delete %>
+    <%= button_to "Delete review", @review.listing, method: :delete, class: "btn btn-danger" %>
+  </div>
 </div>

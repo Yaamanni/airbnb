@@ -15,9 +15,9 @@ puts "Creating listings"
 6.times do
   listing = Listing.new(
     title: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    num_of_rooms: (0..5).to_a.sample,
-    num_of_beds: (0..10).to_a.sample,
-    num_of_guests: (0..10).to_a.sample,
+    num_of_rooms: (1..5).to_a.sample,
+    num_of_beds: (1..10).to_a.sample,
+    num_of_guests: (1..10).to_a.sample,
     description: Faker::Lorem.paragraph(sentence_count: 3, supplemental: true, random_sentences_to_add: 3),
     start_date: Faker::Date.between(from: Date.today, to: 1.days.from_now),
     end_date: Faker::Date.forward(days: 60),
@@ -28,21 +28,21 @@ puts "Creating listings"
   puts "Finished listings!"
 
   puts "Creating bookings"
-  (1..3).to_a.sample.times do
+  (0..2).to_a.sample.times do
     booking = Booking.new(
       start_date:Faker::Date.between(from: Date.today, to: 1.days.from_now),
       end_date: Faker::Date.forward(days: 60),
-      num_of_guests: (0..10).to_a.sample,
+      num_of_guests: (1..10).to_a.sample,
       listing: listing
     )
     booking.save!
     puts "Finished bookings!"
 
     puts "Creating reviews"
-    (1..3).to_a.sample.times do
+    (0..3).to_a.sample.times do
       review = Review.new(
         content: Faker::Lorem.paragraph(sentence_count: 5, supplemental: true, random_sentences_to_add: 2),
-        rating: (0..5).to_a.sample,
+        rating: (1..5).to_a.sample,
         listing: listing,
         booking: booking
       )

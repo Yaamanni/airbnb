@@ -1,5 +1,11 @@
-<h1>Request to book</h1>
+<div class="container-display">
+  <h1>Request to book</h1>
 
-<%= render "form", booking: @booking %>
+  <%= render "form", booking: @booking %>
 
-<br>
+  <br>
+
+  <div>
+    <%= link_to "Back to listing", listing_path(@listing) %>
+  </div>
+</div>

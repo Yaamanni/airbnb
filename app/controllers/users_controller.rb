@@ -44,7 +44,6 @@ class UsersController < ApplicationController
     redirect_to users_path, notice: "User was deleted."
   end
 
-
   private
 
   def set_user
