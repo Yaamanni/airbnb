@@ -4,13 +4,15 @@ class ReviewsController < ApplicationController
 
   # GET /reviews or /reviews.json
   def index
-    @reviews = Review.all
+    @reviews = Review.where(listing_id: params[:listing_id])
+    @listing = Listing.find(params[:listing_id])
   end
 
   # GET /reviews/1 or /reviews/1.json
   def show
-    @listing = Listing.find(params[:listing_id])
-    @review = Review.find(params[:id])
+    # @listing = Listing.find(params[:listing_id])
+    # @review = Review.find(params[:id])
+    @reviews = Review.where(listing_id: params[:id])
   end
 
   # GET /reviews/new

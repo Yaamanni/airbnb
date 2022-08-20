@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   resources :listings do
     resources :bookings, except: [:index, :destroy]
-    resources :reviews
+    resources :reviews, except: [:destroy]
   end
 
   resources :bookings, only: [:index, :destroy]
-  resources :reviews, only: [:create, :index]
+  resources :reviews, only: [:index, :destroy]
   resources :wishlist, only: [:create, :index]
 
   resources :feedbacks, except: [:edit, :destroy]
