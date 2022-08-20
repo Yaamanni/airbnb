@@ -1,5 +1,6 @@
 <h1>Your Booking ID: <%= @booking.id %></h1>
 
+
 <div class="container-display">
   <p style="color: green"><%= notice %></p>
 
@@ -25,4 +26,9 @@
       </div>
     </div>
   </div>
+
+<div class="booking__show">
+  <%= link_to "Show all my bookings", bookings_path , class:"btn-medium" %>
+  <%= button_to "Cancel reservation", @booking, method: :delete, class: "btn btn-danger" %>
+
 </div>

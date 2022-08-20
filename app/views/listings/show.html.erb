@@ -20,10 +20,27 @@
         </div>
       </div>
       <h2 class="card-trip-pricing"><%= @listing.price %> SGD/night</h2>
+<<<<<<< HEAD
     </div>
   </div>
   <br>
   <%= link_to "Edit listing", edit_listing_path(@listing) %>
   <br>
   <%= button_to "Delete listing", @listing, method: :delete %>
+=======
+      <div
+      class="listing-reviews">
+      <%= link_to "Add review", new_listing_review_path(@listing), class:"btn-medium"%>
+      <%= link_to "Book now", new_listing_booking_path(@listing), class:"btn-medium"%>
+      </div>
+      <br>
+    </div>
+  </div>
+  <br>
+  <%= link_to "Edit this listing", edit_listing_path(@listing) , class:"btn-grey" %> |
+  <%= link_to "Back to listings", listings_path, class:"btn-grey"%>
+  <br>
+  <br>
+  <%= button_to "Destroy this listing", @listing, method: :delete, class:"btn-grey" %>
+>>>>>>> buttons updated
 </div>
