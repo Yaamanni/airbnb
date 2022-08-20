@@ -1,6 +1,5 @@
 <h1>Your Booking ID: <%= @booking.id %></h1>
 
-
 <div class="container-display">
   <p style="color: green"><%= notice %></p>
 
@@ -13,23 +12,14 @@
         <h5>Check in: <%= @booking.start_date %></h5>
         <h5>Check out: <%= @booking.end_date %></h5>
         <div class="listing-reviews">
-
-          <%= link_to " My bookings", bookings_path, class:"btn-mini" %>
-          <br>
-          <br>
-          <%= link_to "Edit booking",  edit_listing_booking_path(@listing) %> |
-          <%= link_to "Add review", new_listing_review_path(@listing) %>
-          <br>
-
           <%= link_to "Edit booking",  edit_listing_booking_path(@listing) %>
           <% if !@booking.review.present? %>
             <%= link_to "Add review", new_listing_review_path(@listing, booking_id: @booking) %>
           <% end %>
           <%= link_to "Show all my bookings", bookings_path %>
           <%= button_to "Cancel booking", @booking, method: :delete %>
-
         </div>
       </div>
     </div>
   </div>
-         <%= link_to "Cancel booking", @booking, method: :delete %>
+</div>
