@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Reviews</h1>
+<h1>What they say leh?</h1>
 
 <div id="reviews">
   <% @reviews.each do |review| %>
     <%= render review %>
-    <p>
-      <%= link_to "Show this review", @listing%>
-    </p>
+    <br>
+    <hr>
   <% end %>
 </div>
 
-<%= link_to "New review", new_listing_review_path(:listing_id) %>
+# check the path to redirect to specific listing
+<%= link_to "Back to listing", "#" %>

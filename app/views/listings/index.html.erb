@@ -2,16 +2,21 @@
   <p style="color: green"><%= notice %></p>
 
   <div class="container-all-listings">
-    <h1>Host Listings (<%= @listings.count %>)</h1>
-    <div class="cards">
-    <% @listings.each_with_index do |listing, number| %>
-      <div class="card-trip">
-        <%= render listing %>
-        <%= image_tag("house#{number}.jpeg", class: "d-block w-100 page__listing") %>
-        <h2><%= link_to "#{listing.title}", listing %></h2>
+    <% if @listings.count > 0 %>
+      <h1>Grab these listings</h1>
+      <div id="listings">
+        <% @listings.each do |listing| %>
+          <%= link_to listing do %>
+            <div class="card-trip">
+              <%= image_tag(listing.image_url) %>
+              <h2><%= listing.title %></h2>
+            </div>
+          <% end %>
+        <% end %>
       </div>
+    <% else %>
+      <h2>No listings made yet leh</h2>
     <% end %>
-    </div>
     <br>
     <%= link_to "New listing", new_listing_path %>
   </div>

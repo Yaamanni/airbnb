@@ -1,15 +1,22 @@
-<p style="color: green"><%= notice %></p>
-<% if @bookings.count > 0 %>
-  <h1>All my upcoming bookings</h1>
-  <div id="bookings">
-    <% @bookings.each do |booking| %>
-      <%= link_to listing_booking_path(booking.listing, booking) do %>
-        <%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
-      <% end %>
-      <%= booking.listing.title %>
+<div class="container-display">
+  <p style="color: green"><%= notice %></p>
+
+  <div class="container-all-listings">
+    <% if @bookings.count > 0 %>
+      <h1>Booked liao</h1>
+      <div id="bookings">
+        <% @bookings.each do |booking| %>
+          <%= link_to listing_booking_path(booking.listing, booking) do %>
+            <div class="card-trip">
+            <%= image_tag(booking.listing.image_url) %>
+            <h2><%= booking.listing.title %></h2>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% else %>
+      <h2>No bookings made yet leh</h2>
+      <%= render "shared/search" %>
     <% end %>
   </div>
-<% else %>
-  <h2>No bookings made yet leh</h2>
-  <%= render "shared/search" %>
-<% end %>
+</div>

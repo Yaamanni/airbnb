@@ -1,14 +1,28 @@
-<p style="color: green"><%= notice %></p>
-<h1>Your Trip Booking id: <%= @booking.id %></h1>
-<%= image_tag("house1.jpeg", class: "d-block w-100 page__listing") %>
-<h1><%= @booking.listing.title %></h1>
-<div class="page__bar"></div><br>
-<h1>Number of guests: <%= @booking.num_of_guests %></h1>
-<h1>Check in: <%= @booking.start_date %></h1>
-<h1>Check out: <%= @booking.end_date %></h1>
+<h1>Your Booking ID: <%= @booking.id %></h1>
 
-<div class="booking__show">
-  <%= link_to "Show all my bookings", bookings_path %>
-  <%= link_to "Add review", new_listing_review_path(@listing) %>
-  <%= button_to "Cancel reservation", @booking, method: :delete, class: "btn btn-danger" %>
+<div class="container-display">
+  <p style="color: green"><%= notice %></p>
+
+  <div class="card-trip">
+    <%= image_tag(@listing.image_url) %>
+    <div class="card-trip-infos">
+      <div>
+        <h1><strong><%= @booking.listing.title %></strong></h1>
+        <h5>Number of guests: <%= @booking.num_of_guests %></h5>
+        <h5>Check in: <%= @booking.start_date %></h5>
+        <h5>Check out: <%= @booking.end_date %></h5>
+        <div class="listing-reviews">
+          # edit page should link to save edit?
+          # edit page > show booking routing error
+          <%= link_to "Edit booking",  edit_listing_booking_path(@listing) %> |
+          # reviews/index instead of specific review tied to listing / booking
+          # new review page should have back to booking link?
+          <%= link_to "Add review", new_listing_review_path(@listing) %> |
+          <%= link_to "Show all my bookings", bookings_path %>
+          # booking controller foreign key violation
+          <%= button_to "Cancel booking", @booking, method: :delete %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
