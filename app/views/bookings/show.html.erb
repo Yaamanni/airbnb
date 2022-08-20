@@ -13,11 +13,14 @@
         <h5>Check in: <%= @booking.start_date %></h5>
         <h5>Check out: <%= @booking.end_date %></h5>
         <div class="listing-reviews">
+          <%= link_to " My bookings", bookings_path, class:"btn-mini" %>
+          <br>
+          <br>
           <%= link_to "Edit booking",  edit_listing_booking_path(@listing) %> |
-          <%= link_to "Add review", new_listing_review_path(@listing) %> |
-          <%= link_to " My bookings", bookings_path %>
-          <%= button_to "Cancel booking", @booking, method: :delete %>
+          <%= link_to "Add review", new_listing_review_path(@listing) %>
+          <br>
         </div>
       </div>
     </div>
   </div>
+         <%= link_to "Cancel booking", @booking, method: :delete %>
