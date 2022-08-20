@@ -1,0 +1,223 @@
+[33mcommit f471c475c82781a7c0a1844facb4e000791181d8[m
+Author: yaamanni kasavan <yaamanni19@gmail.com>
+Date:   Thu Aug 18 00:51:16 2022 +0800
+
+    buttons updated
+
+[1mdiff --git a/app/assets/stylesheets/components/_buttons.scss b/app/assets/stylesheets/components/_buttons.scss[m
+[1mindex b5e572c..b2a38de 100644[m
+[1m--- a/app/assets/stylesheets/components/_buttons.scss[m
+[1m+++ b/app/assets/stylesheets/components/_buttons.scss[m
+[36m@@ -13,7 +13,7 @@[m
+ }[m
+ [m
+ .btn-medium {[m
+[31m-	background-color: #1e1c1c;[m
+[32m+[m	[32mbackground-color: $grab;[m
+   color: #ffffff;[m
+ 	border: 1px solid #999999;[m
+ 	padding: 15px 25px;[m
+[1mdiff --git a/app/views/bookings/_form.html.erb b/app/views/bookings/_form.html.erb[m
+[1mindex d82af85..6db0a27 100644[m
+[1m--- a/app/views/bookings/_form.html.erb[m
+[1m+++ b/app/views/bookings/_form.html.erb[m
+[36m@@ -45,8 +45,8 @@[m
+           </div>[m
+ [m
+           <form>[m
+[31m-            <input type="number" value=<%= @listing.price %> disabled class="form-control" id="price-input" name="price-cents">[m
+[31m-            <input type="submit" value="Pay $<%= @listing.price %>" class="btn btn-primary" id="submit">[m
+[32m+[m[32m            <input type="number" value=<%= @listing.price %> disabled class="form-control" id="price-input" name="price-cents", class="btn-medium">[m
+[32m+[m[32m            <input type="submit" value="Pay $<%= @listing.price %>" class="btn-medium" id="submit">[m
+           </form>[m
+         </div>[m
+ [m
+[1mdiff --git a/app/views/bookings/edit.html.erb b/app/views/bookings/edit.html.erb[m
+[1mindex 961981c..f6d3b21 100644[m
+[1m--- a/app/views/bookings/edit.html.erb[m
+[1m+++ b/app/views/bookings/edit.html.erb[m
+[36m@@ -5,6 +5,6 @@[m
+ <br>[m
+ [m
+ <div>[m
+[31m-  <%= link_to "Show this booking", @booking %> |[m
+[31m-  <%= link_to "Back to bookings", listing_booking_path(@listing) %>[m
+[32m+[m[32m  <%= link_to "Show this booking", @booking , class:"btn-medium" %>[m
+[32m+[m[32m  <%= link_to "Back to bookings", listing_booking_path(@listing) , class:"btn-medium" %>[m
+ </div>[m
+[1mdiff --git a/app/views/bookings/show.html.erb b/app/views/bookings/show.html.erb[m
+[1mindex 75c29b9..dead422 100644[m
+[1m--- a/app/views/bookings/show.html.erb[m
+[1m+++ b/app/views/bookings/show.html.erb[m
+[36m@@ -8,6 +8,6 @@[m
+ <h1>Check out: <%= @booking.end_date %></h1>[m
+ [m
+ <div class="booking__show">[m
+[31m-  <%= link_to "Show all my bookings", bookings_path %>[m
+[32m+[m[32m  <%= link_to "Show all my bookings", bookings_path , class:"btn-medium" %>[m
+   <%= button_to "Cancel reservation", @booking, method: :delete, class: "btn btn-danger" %>[m
+ </div>[m
+[1mdiff --git a/app/views/devise/confirmations/new.html.erb b/app/views/devise/confirmations/new.html.erb[m
+[1mindex f7b4a65..13b87b5 100644[m
+[1m--- a/app/views/devise/confirmations/new.html.erb[m
+[1m+++ b/app/views/devise/confirmations/new.html.erb[m
+[36m@@ -13,7 +13,7 @@[m
+   </div>[m
+ [m
+   <div class="form-actions">[m
+[31m-    <%= f.button :submit, "Resend confirmation instructions" %>[m
+[32m+[m[32m    <%= f.button :submit, "Resend confirmation instructions" , class:"btn-medium" %>[m
+   </div>[m
+ <% end %>[m
+ [m
+[1mdiff --git a/app/views/devise/passwords/edit.html.erb b/app/views/devise/passwords/edit.html.erb[m
+[1mindex 591cd8c..0b176ec 100644[m
+[1m--- a/app/views/devise/passwords/edit.html.erb[m
+[1m+++ b/app/views/devise/passwords/edit.html.erb[m
+[36m@@ -20,7 +20,7 @@[m
+   </div>[m
+ [m
+   <div class="form-actions">[m
+[31m-    <%= f.button :submit, "Change my password" %>[m
+[32m+[m[32m    <%= f.button :submit, "Change my password" , class:"btn-medium" %>[m
+   </div>[m
+ <% end %>[m
+ [m
+[1mdiff --git a/app/views/devise/passwords/new.html.erb b/app/views/devise/passwords/new.html.erb[m
+[1mindex 01ce0b8..f8b5764 100644[m
+[1m--- a/app/views/devise/passwords/new.html.erb[m
+[1m+++ b/app/views/devise/passwords/new.html.erb[m
+[36m@@ -11,7 +11,7 @@[m
+   </div>[m
+ [m
+   <div class="form-actions">[m
+[31m-    <%= f.button :submit, "Send me reset password instructions" %>[m
+[32m+[m[32m    <%= f.button :submit, "Send me reset password instructions", class:"btn-medium"%>[m
+   </div>[m
+ <% end %>[m
+ [m
+[1mdiff --git a/app/views/devise/shared/_links.html.erb b/app/views/devise/shared/_links.html.erb[m
+[1mindex de5ad16..1257ce1 100644[m
+[1m--- a/app/views/devise/shared/_links.html.erb[m
+[1m+++ b/app/views/devise/shared/_links.html.erb[m
+[36m@@ -7,15 +7,15 @@[m
+ <% end %>[m
+ <br>[m
+ <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>[m
+[31m-  <%= link_to "Forgot email or password?", new_password_path(resource_name) %><br />[m
+[32m+[m[32m  <%= link_to "Forgot email or password?", new_password_path(resource_name) , class:"btn-medium" %><br />[m
+ <% end %>[m
+ [m
+ <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>[m
+[31m-  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />[m
+[32m+[m[32m  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) , class:"btn-medium" %><br />[m
+ <% end %>[m
+ [m
+ <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>[m
+[31m-  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />[m
+[32m+[m[32m  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) , class:"btn-medium" %><br />[m
+ <% end %>[m
+ [m
+ <%- if devise_mapping.omniauthable? %>[m
+[1mdiff --git a/app/views/devise/unlocks/new.html.erb b/app/views/devise/unlocks/new.html.erb[m
+[1mindex c42de17..b6e949d 100644[m
+[1m--- a/app/views/devise/unlocks/new.html.erb[m
+[1m+++ b/app/views/devise/unlocks/new.html.erb[m
+[36m@@ -12,7 +12,7 @@[m
+   </div>[m
+ [m
+   <div class="form-actions">[m
+[31m-    <%= f.button :submit, "Resend unlock instructions" %>[m
+[32m+[m[32m    <%= f.button :submit, "Resend unlock instructions" , class:"btn-grey" %>[m
+   </div>[m
+ <% end %>[m
+ [m
+[1mdiff --git a/app/views/feedbacks/_form.html.erb b/app/views/feedbacks/_form.html.erb[m
+[1mindex 2d2490a..0eedeae 100644[m
+[1m--- a/app/views/feedbacks/_form.html.erb[m
+[1m+++ b/app/views/feedbacks/_form.html.erb[m
+[36m@@ -9,6 +9,6 @@[m
+   </div>[m
+ [m
+   <div class="form-actions">[m
+[31m-    <%= f.button :submit %>[m
+[32m+[m[32m    <%= f.button :submit, class:"btn-medium" %>[m
+   </div>[m
+ <% end %>[m
+[1mdiff --git a/app/views/listings/_form.html.erb b/app/views/listings/_form.html.erb[m
+[1mindex 0973a5e..e8d2cbe 100644[m
+[1m--- a/app/views/listings/_form.html.erb[m
+[1m+++ b/app/views/listings/_form.html.erb[m
+[36m@@ -17,7 +17,7 @@[m
+     </div>[m
+ [m
+     <div class="form-actions">[m
+[31m-      <%= f.button :submit %>[m
+[32m+[m[32m      <%= f.button :submit , class:"btn-medium"%>[m
+     </div>[m
+   <% end %>[m
+ </div>[m
+[1mdiff --git a/app/views/listings/edit.html.erb b/app/views/listings/edit.html.erb[m
+[1mindex c69a2df..d08c72e 100644[m
+[1m--- a/app/views/listings/edit.html.erb[m
+[1m+++ b/app/views/listings/edit.html.erb[m
+[36m@@ -6,7 +6,7 @@[m
+   <br>[m
+ [m
+   <div>[m
+[31m-    <%= link_to "Show this listing", @listing %> |[m
+[31m-    <%= link_to "Back to listings", listings_path %>[m
+[32m+[m[32m    <%= link_to "Show this listing", @listing , class:"btn-medium"%> |[m
+[32m+[m[32m    <%= link_to "Back to listings", listings_path , class:"btn-medium" %>[m
+   </div>[m
+ </div>[m
+[1mdiff --git a/app/views/listings/index.html.erb b/app/views/listings/index.html.erb[m
+[1mindex f4da3c6..35a0687 100644[m
+[1m--- a/app/views/listings/index.html.erb[m
+[1m+++ b/app/views/listings/index.html.erb[m
+[36m@@ -13,6 +13,6 @@[m
+       </div>[m
+     </div>[m
+     <br>[m
+[31m-    <%= link_to "New listing", new_listing_path %>[m
+[32m+[m[32m    <%= link_to "New listing", new_listing_path , class:"btn-medium" %>[m
+   </div>[m
+ </div>[m
+[1mdiff --git a/app/views/listings/new.html.erb b/app/views/listings/new.html.erb[m
+[1mindex 191447c..11bd15a 100644[m
+[1m--- a/app/views/listings/new.html.erb[m
+[1m+++ b/app/views/listings/new.html.erb[m
+[36m@@ -6,6 +6,6 @@[m
+   <br>[m
+ [m
+   <div>[m
+[31m-    <%= link_to "Back to listings", listings_path %>[m
+[32m+[m[32m    <%= link_to "Back to listings", listings_path, class:"btn-grey" %>[m
+   </div>[m
+ </div>[m
+[1mdiff --git a/app/views/listings/show.html.erb b/app/views/listings/show.html.erb[m
+[1mindex ef3a0da..b614267 100644[m
+[1m--- a/app/views/listings/show.html.erb[m
+[1m+++ b/app/views/listings/show.html.erb[m
+[36m@@ -21,14 +21,16 @@[m
+       <h2 class="card-trip-pricing"><%= @listing.price %> SGD/night</h2>[m
+       <div[m
+       class="listing-reviews">[m
+[31m-      <%= link_to "Add review", new_listing_review_path(@listing) %>[m
+[31m-      <%= link_to "Book now", new_listing_booking_path(@listing) %>[m
+[32m+[m[32m      <%= link_to "Add review", new_listing_review_path(@listing), class:"btn-medium"%>[m
+[32m+[m[32m      <%= link_to "Book now", new_listing_booking_path(@listing), class:"btn-medium"%>[m
+       </div>[m
+       <br>[m
+     </div>[m
+   </div>[m
+   <br>[m
+[31m-  <%= link_to "Edit this listing", edit_listing_path(@listing) %> |[m
+[31m-  <%= link_to "Back to listings", listings_path %>[m
+[31m-  <%= button_to "Destroy this listing", @listing, method: :delete %>[m
+[32m+[m[32m  <%= link_to "Edit this listing", edit_listing_path(@listing) , class:"btn-grey" %> |[m
+[32m+[m[32m  <%= link_to "Back to listings", listings_path, class:"btn-grey"%>[m
+[32m+[m[32m  <br>[m
+[32m+[m[32m  <br>[m
+[32m+[m[32m  <%= button_to "Destroy this listing", @listing, method: :delete, class:"btn-grey" %>[m
+ </div>[m

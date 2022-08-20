@@ -14,16 +14,17 @@
         <h5>No. of guests: <%= @listing.num_of_guests %></h5>
         <h5>Availability: <%= @listing.start_date %> to <%= @listing.end_date %></h5>
         <div class="listing-reviews">
-          <%= link_to "Grab now", new_listing_booking_path(@listing) %> |
-          <%= link_to "Reviews how?", listing_reviews_path(@listing) %> |
-          <%= link_to "Back to listings", listings_path %>
+        <br>
+          <%= link_to "Grab now 😃", new_listing_booking_path(@listing), class:"btn-mini" %>
+          <br>
+          <br>
+          <%= link_to "Reviews how?", listing_reviews_path(@listing) %>
         </div>
       </div>
       <h2 class="card-trip-pricing"><%= @listing.price %> SGD/night</h2>
     </div>
   </div>
+  <%= link_to "Edit listing", edit_listing_path(@listing) %> |
+  <%= link_to "Delete listing", @listing, method: :delete %>
   <br>
-  <%= link_to "Edit listing", edit_listing_path(@listing) %>
-  <br>
-  <%= button_to "Delete listing", @listing, method: :delete %>
-</div>
+  <%= link_to " ", listings_path, class:"fa-solid fa-arrow-left"%>
