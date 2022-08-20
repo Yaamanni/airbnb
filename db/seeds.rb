@@ -19,6 +19,7 @@ puts "Creating listings"
     title: Faker::TvShows::Friends.location,
     num_of_beds: (1..10).to_a.sample,
     num_of_guests: (1..10).to_a.sample,
+    num_of_rooms: 1,
     description: Faker::Hipster.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 3),
     start_date: Faker::Date.between(from: Date.today, to: 1.days.from_now),
     end_date: Faker::Date.forward(days: 60),
