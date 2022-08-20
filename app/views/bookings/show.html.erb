@@ -12,14 +12,11 @@
         <h5>Check in: <%= @booking.start_date %></h5>
         <h5>Check out: <%= @booking.end_date %></h5>
         <div class="listing-reviews">
-          # edit page should link to save edit?
-          # edit page > show booking routing error
-          <%= link_to "Edit booking",  edit_listing_booking_path(@listing) %> |
-          # reviews/index instead of specific review tied to listing / booking
-          # new review page should have back to booking link?
-          <%= link_to "Add review", new_listing_review_path(@listing) %> |
+          <%= link_to "Edit booking",  edit_listing_booking_path(@listing) %>
+          <% if !@booking.review.present? %>
+            <%= link_to "Add review", new_listing_review_path(@listing, booking_id: @booking) %>
+          <% end %>
           <%= link_to "Show all my bookings", bookings_path %>
-          # booking controller foreign key violation
           <%= button_to "Cancel booking", @booking, method: :delete %>
         </div>
       </div>
