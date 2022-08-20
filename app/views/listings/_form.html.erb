@@ -6,14 +6,12 @@
     <div class="search-form-control form-group">
       <%= f.input :title, as: :text %>
       <%= f.input :description, as: :text %>
-      # need to change to some date type or calendar view
-      <%= f.input :start_date, as: :text %>
-      # need to change to some date type or calendar view
-      <%= f.input :end_date, as: :text %>
+      <%= f.input :start_date, as: :date, html5: true, input_html: { value: Time.now.to_s.to_date }  %>
+      <%= f.input :end_date, as: :date, html5: true, input_html: { value: Time.now.tomorrow.to_s.to_date } %>
       <%= f.input :num_of_rooms, collection: 1..10, label: "No. of Rooms" %>
       <%= f.input :num_of_beds, collection: 1..10, label: "No. of Beds" %>
       <%= f.input :num_of_guests, collection: 1..10, label: "No. of Guests" %>
-      <%= f.input :price, label: "Price Per Night" %>
+      <%= f.input :price, label: "Price Per Night", input_html: { min:'0', step: 'any'} %>
     </div>
 
     <div class="form-actions">

@@ -4,20 +4,22 @@ class ReviewsController < ApplicationController
 
   # GET /reviews or /reviews.json
   def index
-    @reviews = Review.all
+    @reviews = Review.where(listing_id: params[:listing_id])
+    @listing = Listing.find(params[:listing_id])
   end
 
   # GET /reviews/1 or /reviews/1.json
   def show
-    @listing = Listing.find(params[:listing_id])
-    @review = Review.find(params[:id])
+    @reviews = Review.where(listing_id: params[:id])
   end
 
   # GET /reviews/new
   def new
+    @booking = Booking.find(params[:booking_id])
     @listing = Listing.find(params[:listing_id])
     @review = Review.new
     @review.listing = @listing
+    @review.booking = @booking
   end
 
   # GET /reviews/1/edit
@@ -27,13 +29,14 @@ class ReviewsController < ApplicationController
   # POST /reviews or /reviews.json
   def create
     @listing = Listing.find(params[:listing_id])
+    @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
     @review.listing = @listing
-    @review.booking = @listing.bookings.first
+    @review.booking = @booking
 
     respond_to do |format|
-      if @review.save
-        format.html { redirect_to listing_review_path(@review, @review.booking), notice: "Review was successfully created." }
+      if @review.save!
+        format.html { redirect_to listing_booking_path(@listing, @booking), notice: "Review was successfully created." }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new, status: :unprocessable_entity }
