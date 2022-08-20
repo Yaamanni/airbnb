@@ -10,8 +10,6 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1 or /reviews/1.json
   def show
-    # @listing = Listing.find(params[:listing_id])
-    # @review = Review.find(params[:id])
     @reviews = Review.where(listing_id: params[:id])
   end
 
