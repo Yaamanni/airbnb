@@ -15,9 +15,11 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
+    @booking = Booking.find(params[:booking_id])
     @listing = Listing.find(params[:listing_id])
     @review = Review.new
     @review.listing = @listing
+    @review.booking = @booking
   end
 
   # GET /reviews/1/edit
@@ -30,11 +32,11 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
     @review.listing = @listing
-    @review.booking = @listing.bookings.first
+    @review.booking = @booking
 
     respond_to do |format|
-      if @review.save
-        format.html { redirect_to listing_review_path(@listing, @review), notice: "Review was successfully created." }
+      if @review.save!
+        format.html { redirect_to listing_booking_path(@listing, @booking), notice: "Review was successfully created." }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new, status: :unprocessable_entity }
