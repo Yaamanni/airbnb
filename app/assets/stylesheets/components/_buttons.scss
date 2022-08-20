@@ -32,3 +32,24 @@
 	font-weight: lighter;
 	opacity: 1.0;
 }
+
+.btn-mini {
+	background-color:$grab;
+  text-decoration: none !important;
+  color: #ffffff;
+	border: 1px solid #999999;
+	padding: 5px 10px;
+	border-radius: 20px;
+	font-weight: lighter;
+	opacity: 1.0;
+}
+
+.btn-bin {
+	background-color:#ffffff;
+  color: #0e0e0e;
+	border: 1px solid #999999;
+	padding: 5px 10px;
+	border-radius: 20px;
+	font-weight: lighter;
+	opacity: 1.0;
+}
