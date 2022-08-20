@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
 
   # GET /bookings/1/edit
   def edit
+    @listing = @booking.listing
   end
 
   # POST /bookings or /bookings.json

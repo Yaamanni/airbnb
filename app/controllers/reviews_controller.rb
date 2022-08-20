@@ -27,13 +27,14 @@ class ReviewsController < ApplicationController
   # POST /reviews or /reviews.json
   def create
     @listing = Listing.find(params[:listing_id])
+    @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
     @review.listing = @listing
     @review.booking = @listing.bookings.first
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to listing_review_path(@review, @review.booking), notice: "Review was successfully created." }
+        format.html { redirect_to listing_review_path(@listing, @review), notice: "Review was successfully created." }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new, status: :unprocessable_entity }
