@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:index, :destroy]
-  resources :reviews, only: [:index, :destroy]
+  resources :reviews, only: [:destroy]
   resources :wishlist, only: [:create, :index]
 
   resources :feedbacks, except: [:edit, :destroy]
